@@ -1,15 +1,8 @@
 class Solution
 {
-    public function strStr(string $haystack, string $needle): int
-    {
-        $needleLength = strlen($needle);
-        for ($i = 0; $i <= strlen($haystack) - $needleLength; $i++) {
-            $substr = substr($haystack, $i, $needleLength);
-            if ($substr === $needle) {
-                return $i;
-            }
-        }
 
-        return -1;
+    function strStr(string $haystack, string $needle): int {
+        $pos = strpos($haystack, $needle);
+        return $pos === false ? -1 : $pos;
     }
 }
